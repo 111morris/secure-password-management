@@ -8,8 +8,8 @@ def dbconfig():
  try:
   db = mysql.connector.connect(
    host='localhost',
-   user='password_manager',
-   passwd='password'
+   user='morris_work',
+   passwd='111morris'
   )
 
  except Exception as e:
