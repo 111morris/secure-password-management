@@ -3,7 +3,7 @@ import sys
 import random
 import string
 from utils.dbconfig import dbconfig
-import getpass
+from getpass import getpass
 from rich import print as printc
 from rich.console import Console
 
@@ -39,7 +39,7 @@ def config():
 
  while 1:
   mp = getpass("Enter master password: ")
-  if mp != getpass("Re-type: ") and mp != "":
+  if mp == getpass("Re-type: ") and mp != "":
    break
    printc("[yellow][-] Please try again.[/yellow]")
 
