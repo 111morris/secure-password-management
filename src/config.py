@@ -41,13 +41,12 @@ def config():
   mp = getpass("Enter master password: ")
   if mp == getpass("Re-type: ") and mp != "":
    break
-   printc("[yellow][-] Please try again.[/yellow]")
-
+  printc("[yellow][-] Please try again.[/yellow]")
  # hash the master password
  hashed_mp = hashlib.sha256(mp.encode()).hexdigest()
  printc("[green][+] Master password hashed successfully (generated)[/green]")
 
- # generate a device secret
+ #generate a device secret
  ds = generateDeviceSecret()
  printc("[green][+] Device secret generated successfully[/green]")
 
@@ -57,9 +56,8 @@ def config():
  cursor.execute(query, val)
  db.commit()
 
- printc("[yellow][!] Please note down the device secret. You will need it to access the password manager[/yellow]")
+ print("[yellow][!] Please note down the device secret. You will need it to access the password manager[/yellow]")
  printc("[green][+] Configuration completed successfully (added to the database)[/green]")
-
  db.close()
 
 config()
